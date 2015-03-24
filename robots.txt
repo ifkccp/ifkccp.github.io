@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /morenotes
+
+Sitemap: http://ls-la.me/sitemap.xml
