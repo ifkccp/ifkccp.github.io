@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ls-la.me/2015/03/24/symlinks-within-shared-folders-in-VirtualBox/</loc>
+    <lastmod>2015-03-24T08:17:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://ls-la.me/2015/03/24/port-forwarding-for-virtualbox-on-mac/</loc>
-    <lastmod>2015-03-24T07:49:58.000Z</lastmod>
+    <lastmod>2015-03-24T08:11:59.000Z</lastmod>
   </url>
   
 </urlset>

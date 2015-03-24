@@ -54,6 +54,56 @@
   <header>
     
   
+    <h1 class="title"><a href="/2015/03/24/symlinks-within-shared-folders-in-VirtualBox/">在VirtualBox的共享目录下创建软链接</a></h1>
+  
+
+    <time datetime="2015-03-24T07:41:38.000Z">
+  <span class="day">24</span><span class="month">Mar</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>准备在Mac的VirtualBox里搭建hexo环境，由于需要用到md编辑，所以项目目录需要放在共享目录下，方便使用md编辑器。在安装过程中 <code>npm install</code> 的时候总是报错，究其原因，是在共享目录下没有权限创建软链接。详细说明见<a href="https://www.virtualbox.org/ticket/10085" target="_blank" rel="external">这里</a>，下边给出解决办法。</p>
+<p>先关闭虚拟机，注意是关闭(<code>shutdown</code>)，不是暂停(<code>pause</code>)或者(<code>save state</code>)。<br>然后打开mac的shell，执行：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span><span class="constant">VBoxManage </span>setextradata <span class="constant">MACHINE_LABEL VBoxInternal2/SharedFoldersEnableSymlinksCreate/SHARE_LABEL </span><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>注意这里的 <code>MACHINE_LABEL</code> 是你给虚拟机取的名字，比如我的就叫做 <code>centos7_pure</code>，<code>SHARE_LABEL</code> 是共享目录的名字，比如我的叫 <code>vmdir</code>。</p>
+<p>设置好之后检查是否生效：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span><span class="constant">VBoxManage </span>getextradata <span class="constant">MACHINE_LABEL </span>enumerate</span><br></pre></td></tr></table></figure></p>
+<p>现在启动虚拟机，挂载共享目录，就可以继续 <code>npm install</code> 了。</p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/Mac/">Mac</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/Mac/">Mac</a><a href="/tags/VirtualBox/">VirtualBox</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
     <h1 class="title"><a href="/2015/03/24/port-forwarding-for-virtualbox-on-mac/">Mac下设置VirtualBox的80端口转发</a></h1>
   
 
@@ -84,7 +134,7 @@
 
       
   <div class="tags">
-<a href="/tags/Mac/">Mac</a><a href="/tags/Virtualbox/">Virtualbox</a></div>
+<a href="/tags/Mac/">Mac</a><a href="/tags/VirtualBox/">VirtualBox</a></div>
 
       
     </footer>
