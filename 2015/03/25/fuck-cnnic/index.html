@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>清除CNNIC证书 | 架构人生</title>
+  <meta name="author" content="我叫小井">
+
+  
+  <meta name="description" content="昨天看到这个消息，说CNNIC发布中间人攻击证书，决定把CNNIC设为不信任。下边提供网上找到的方法：
+Windows:
+运行certmsg.msc证书管理器。
+选择受信任的根证书颁发机构 -&amp;gt; 证书，如果在右边能找到CNNIC的证书，将其导入到不信任的证书中。
+如果没有，先下载这三个证书，在">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="架构人生" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="http://libs.useso.com/js/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61119660-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">清除CNNIC证书</h1>
+  
+
+    <time datetime="2015-03-25T03:24:24.000Z">
+  <span class="day">25</span><span class="month">Mar</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>昨天看到<a href="http://www.williamlong.info/archives/4183.html" target="_blank" rel="external">这个消息</a>，说CNNIC发布中间人攻击证书，决定把CNNIC设为不信任。下边提供网上找到的方法：</p>
+<h3 id="Windows:">Windows:</h3><ol>
+<li>运行<code>certmsg.msc</code>证书管理器。</li>
+<li>选择<code>受信任的根证书颁发机构</code> -&gt; <code>证书</code>，如果在右边能找到<code>CNNIC</code>的证书，将其导入到<code>不信任的证书</code>中。</li>
+<li>如果没有，先下载这<a href="/files/CNNIC.zip">三个证书</a>，在证书上点右键，安装，安装位置选择 <code>不信任的证书</code>。<br><img src="http://ww4.sinaimg.cn/mw690/00651KUrgw1eqhslrgf7aj30e40bwabx.jpg" alt=""></li>
+<li>最后在证书管理器中找到这些证书，右键属性，选中 <code>禁用此证书的所有目的</code>。</li>
+</ol>
+<h3 id="Mac:">Mac:</h3><p>按图所示找到CNNIC证书，双击设为不信任即可。<br><img src="http://ww4.sinaimg.cn/mw690/00651KUrgw1eqht50jvexj30vu0jwqae.jpg" alt=""></p>
+<p>然后打开这个网站测试，提示证书不信任就对了： <a href="">https://www.cnnic.cn</a>。</p>
+
+    
+    
+    <footer class="meta">
+      
+  <div class="cats">
+<a href="/categories/security/">security</a></div>
+
+      
+  <div class="tags">
+<a href="/tags/CA/">CA</a><a href="/tags/CNNIC/">CNNIC</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+<section id="comments" style="padding:20px">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-fuck-cnnic" data-title="清除CNNIC证书" data-url="http://ls-la.me/2015/03/25/fuck-cnnic/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'ls-la'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2015 我叫小井
+  
+</p>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="http://libs.useso.com/js/fancybox/2.1.1/jquery.fancybox.min.css" media="screen" type="text/css">
+<script src="http://libs.useso.com/js/fancybox/2.1.1/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
