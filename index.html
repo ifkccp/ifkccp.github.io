@@ -122,99 +122,6 @@
           
           
             
-              <a class="post-title-link" href="/2015/03/25/fuck-cnnic/">
-                清除CNNIC证书
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-03-25
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/security/">security</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/03/25/fuck-cnnic/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/25/fuck-cnnic/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>昨天看到<a href="http://www.williamlong.info/archives/4183.html" target="_blank" rel="external">这个消息</a>，说CNNIC发布中间人攻击证书，决定把CNNIC设为不信任。下边提供网上找到的方法：</p>
-<h3 id="Windows:">Windows:</h3><ol>
-<li>运行<code>certmsg.msc</code>证书管理器。</li>
-<li>选择<code>受信任的根证书颁发机构</code> -&gt; <code>证书</code>，如果在右边能找到<code>CNNIC</code>的证书，将其导入到<code>不信任的证书</code>中。</li>
-<li>如果没有，先下载这<a href="/files/CNNIC.zip">三个证书</a>，在证书上点右键，安装，安装位置选择 <code>不信任的证书</code>。<br><img src="http://ww4.sinaimg.cn/large/00651KUrgw1eqhslrgf7aj30e40bwabx.jpg" alt=""></li>
-<li>最后在证书管理器中找到这些证书，右键属性，选中 <code>禁用此证书的所有目的</code>。</li>
-</ol>
-<h3 id="Mac:">Mac:</h3><p>按图所示找到CNNIC证书，双击设为不信任即可。<br><img src="http://ww4.sinaimg.cn/large/00651KUrgw1eqht50jvexj30vu0jwqae.jpg" alt=""></p>
-<p>然后打开这个网站测试，提示证书不信任就对了： <a href="https://www.cnnic.cn" target="_blank" rel="external">https://www.cnnic.cn</a>。</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/CA/"> #CA </a>
-          
-            <a href="/tags/CNNIC/"> #CNNIC </a>
-          
-        </div>
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
               <a class="post-title-link" href="/2015/03/24/symlinks-within-shared-folders-in-VirtualBox/">
                 在VirtualBox的共享目录下创建软链接
               </a>
@@ -499,7 +406,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
