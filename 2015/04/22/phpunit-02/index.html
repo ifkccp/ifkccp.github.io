@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="PHP,PHPUnit,测试," />
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-  <title> [转]愤青曾国藩的自我完善之路 // 架构人生 </title>
+  <title> PHPUnit学习笔记2：进阶 // 架构人生 </title>
 </head>
 
 <body>
@@ -120,7 +120,7 @@
           
           
             
-              [转]愤青曾国藩的自我完善之路
+              PHPUnit学习笔记2：进阶
             
           
         </h1>
@@ -128,17 +128,28 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-02-14
+          发表于 2015-04-22
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/PHP/">PHP</a>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/02/14/Mr-Niubi/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/02/14/Mr-Niubi/"></span>
+            <a href="/2015/04/22/phpunit-02/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/22/phpunit-02/"></span>
             </a>
           </span>
           
@@ -152,37 +163,40 @@
       
 
       
-        <p>by 冯唐</p>
-<p>（一）</p>
-<p>曾国藩牛逼。</p>
-<p>保暖后，思淫。精溢后，希望如何能死而不朽。鲁叔孙豹在《左传》里这样给不朽分类和定义：“太上有立德﹐其次有立功﹐其次有立言﹐虽久不废﹐此之谓不朽。”而不朽到底有什么用，没人说得清楚，就象为什么姑娘长成那个样子就好看，没人说得清楚一样。应该又是上天造人的时候，在人脑操作系统里留下的一个命门，同名利财色福寿禄等等幻象一样猫抓狗刨人心，什么时候捅，都是肿痛。对于一些所谓刀枪不入的人，不朽甚至比名利财色福寿禄更厉害，不用鸦片或者大麻之类的生物碱，也让这类人上瘾和入迷。</p>
-<p>曾国藩牛啊，把自己的肉身当成蜡烛，剁开两节，四个端点，点燃四个火苗燃烧，在通往牛逼的仄仄石板路上发足狂奔。一个人在短短六十一年的阳寿中实现了全部三类不朽。有个对联高度概括曾国藩的一生：立德立功立言三不朽，为师为将为相一完人。</p>
-<p>立德。如果抛开时代限制，曾国藩弥补了诸多孔丘的不足，比孟轲更有资格评选亚圣。孔丘这个倔老头创建儒学的时候，办公条件简陋，手下三千门徒既懒惰又没出息，造成以《论语》传世的二万四千字理论体系有三个明显的不足。第一，没有成功人士作为理论的形象代言人。孔丘自己作为一个政治咨询顾问游走各个诸侯国，被君王们怀疑没有速效，被地痞追打，业务始终开展乏力。孔丘死后，也没有什么人因为身体力行其理论，吃上最大的黄花鱼坐上最豪华的五花牛车，没有超级成功个案的励志型理论缺乏实践吸引性。第二，没有很好的编写理论教材。《论语》是本优点和缺点同样明显的书。优点是孔丘这个倔老头的教导和体会，干贝鱼翅鲍鱼燕窝，一句是一句，全是干货，不掺一点水分，几乎每句都能通过灌水成为一部长篇小说。缺点是毫无组织，毫无主题。胡乱将这些干货分了二十章，然后从每一章第一句话中随便挑出两个字，当成本章的题目，比如“学而”，比如“八佾”，太懒惰了吧？孔丘给自己的定位毕竟不同于亨利米勒，不能用同样的写法吧？第三，没有很好地与时俱进，根据时代的要求丰富理论的应用。孔丘那时候，没有想象到工业革命，外族入侵，邪教猖獗，帝国官僚体系庞大，鸦片梅毒随风飘扬等等一系列困扰近现代中国人的问题。后学青年曾国藩在苦修敏行孔丘儒学的基础上，拿庄周老聃来泻火，平衡心态，拿大禹墨翟来强筋，增加实用性。用他位极人臣的事实和修订精良的《曾文正公全集》，证明儒学可以致事功，儒学可以更丰富更实用，儒学可以与时俱进，漂亮地解决现代问题，从而在很大程度上弥补了孔丘时代儒学的三方面不足。尽管谈不上象德国哲学家那样构建完整逻辑理论体系，至少，普及本《曾文正公嘉言钞》有了大致准确的归类：治身，治学，治家，治世，治政，治军。而曾国藩自己在三十八岁时编写的《曾氏家訓》，也按修身、齐家、治国三门，分成了三十二目。</p>
-<p>立功。曾国藩的简历明摆着：二十八岁，中进士，授翰林院庶吉士，散馆后授检讨(官名，正处级吧)，之后在京十年七迁，连升十级。先后任四川乡试正考官、翰林院侍讲学士、内阁学士等（应该算正厅局级吧）、礼部右侍郎，历署兵、工、刑、吏等部侍郎（应该算副部级吧）。四十三岁，组建湘军。十一年之后，曾国藩五十四岁，湘军攻陷天京。五十五岁，创建江南制造总局。六十岁处理天津教案。六十一岁，提出在美国设立“中国留学生事务所”， 病死于两江督署。曾国藩为师为将为相的经历验证了两个事情，第一，通才是存在的，人事练达，世事洞明，<strong>依靠常识百事可做</strong>。无论是抓黄赌毒还是整饬经济外交军事教育，里面贯穿着一条永远闪光的金线。第二，做事是硬道理。如果想立事功，不要总在集团总部务虚，到前线去，到二级公司去，真正柴米油盐酱醋茶，对付痞子混子傻子疯子，对一张完整明确的损益表负责。我唯一好奇的是，曾国藩有没有想过进一步做秦皇汉武，仿照赵匡胤，找件黄坎肩披披。曾国藩破天京之后，有条件：天下能打的兵百分之八十是他直接或间接带出来的。有说法：“春秋大义别华夷”，“志在攮夷愿未酬”。有人教唆：野史讲，李秀成被俘后，很快和曾国藩进行了对话节目，在对话中涉及联合湘军和李秀成能控制的太平天国力量，驱除鞑虏，恢复中华，并写了几万字的心得。最后的结果是，曾国藩在俘获李秀成之后十六天，没有请示总部，杀了李秀成，上报总部的数万字供词，真伪难辨。曾国藩培养出来的李鸿章是极少数有见识又有胆量能指出他缺点的人之一，“少荃论余之短处，总是儒缓。”</p>
-<p>立言。曾国藩初到京城，太平天国还没火爆，立德又太遥远太近乎扯淡。他最初的理想是以文章闻名于朝野，一扫文坛的颓风，做个愤怒的文青：“少年不可怕丑，须有狂者进取之趣，此时不试为之，则后此将不肯为矣。”他的目标很高：“有所谓躬行实践者，始知范、韩可学而至也，马迁、韩愈亦可学而至也，程、朱亦可学而至也。”总之，听上去象我们小时候常唱的歌词：当阳光照耀的时候，就该梦想，就该歌唱。但是，如果心平气和地剥离开曾国藩事功道德造就的光环，他的文字文采平平。一个原因是天分有限，老天不可能把所有好事都集中到一个人身上，而且几乎所有的好事都是双刃剑，一个人语缓行迟老成持重，很容易成就事功，但是很难心鹜八极笔惊天地。另外一个原因就是俗务缠身，一直没能当上职业作家：“古文一事，平日自觉颇有心得，而握管之时不克殚极思，作成总不适意。安得屏去万事，酣睡旬日，神完意适，然后作文一首，以掳胸中奇趣。”曾国藩没有时间专业写专栏，但是还是能及挤时间读书：“早岁有志著述，自驰驱戎马，此念久废，然亦不敢遂置诗书于不问。每日稍闲，则取班、马、韩、欧诸家文旧日所酷好者，一温习之，用此以养吾心而凝吾神。”“廿三史每日读十页，虽有事不间断。”长期纪律严格的阅读造成曾国藩对文字的见识强于他的写作能力，他编的文字比他自己写的文字强，他的评论比他的创作强，他的应用文（书信、日记和奏议）比他的其他文字强。曾国藩堪称应用文的大师，有话才说，意尽则止，辞足则止，决不多添一笔。机场的书店最是势利，没市场的决不稍留书架上。身死百年的曾国藩长了一张青瓜脸，不是美女也不是美男，一张裸照也没有传世，也没用下半身流水写作也没用胸口沾水写作，还能长期占领各地机场书店的书架。无论文字如何，这本身就证明他已经立言而不朽了。</p>
-<p>（二）</p>
-<p>愤青曾国藩走过的是一条自我完善之路。这条路说来老套：诚心正意修身齐家治国平天下。</p>
-<p>第一步，也是第一个修炼的要点，是诚心正意。“方今天下大乱，人怀苟且之心。出范围之外，无过而问焉者。吾辈当立准绳，自为守之，并约同志共守之，无使吾心之贼，破吾心之墙。”决心一辈子同自己心中的贼做斗争，即使心中的贼象小鸡鸡一样竖起来，也决不安抚，决不自摸。“功可强立，名可强成。不为圣贤，便为禽兽。莫问收获，但问耕耘。”</p>
-<p>第二个要点，是好习惯。在生活学习上，曾国藩给自己定了一系列的规矩，而且一执行就是一辈子。比如，敬：“整齐严肃，无时不惧。”比如，早起：“黎明即起，醒后勿沾恋。”比如，读史：“丙申年讲念三史，大人曰：‘尔借钱买书，吾不惜极力为尔弥缝，尔能圈点一遍，则不负我矣。’嗣后每日圈点十叶，间断不孝。”而且，还强制家人共同营造气氛：“吾家子侄半耕半读，以守先人之旧，慎无存半点官气。不许坐轿。不许唤人取水添茶等事。其拾柴收粪等事须一一为之。插日莳禾等事亦时时学之。”</p>
-<p>第三个要点，是好心境。不问收获，禁不住不梦见收获。无人的夜晚，不自摸心中的小贼，明天早上，小贼和小鸡鸡还会“咯咯”叫着迎着朝阳起床。长期的“抑然”和对名利的向往，会让人疯狂。曾国藩倚靠心理暗示活下来，反复念叨：“花末全开月未圆”，“有福不可享尽，有势不可使尽”，“恬静书味”，“治生不求富，读书不求官，修德不求报，为文不求传”。曾国藩还有物质帮助：“阅陶诗全部，取其太闲适者记出，将钞一册，合之杜、韦、白、苏、陆五家之闲适诗纂成一集，以备朝夕讽诵，洗涤名利争胜之心。”仿佛建筑工人枕头下面压着的《人体艺术摄影精选》。到了真的功成名就了，可以张牙舞爪了，这种心理暗示已经根深蒂固。灭了太平天国，曾国藩马上自销湘军，自树对手淮军。两年后，五十五岁，上疏请求解除一切职务，注销爵位，提前退休。</p>
-<p>并不是说，能一辈子做到上述三点，诚心正意，以好心境遵循好习惯就能成曾国藩。做到以上三点，即使再加上生而神灵，也只是做到了人和。其他的，还有地利，如果曾国藩的江东是上海而不是倔强狠霸的湖南，我不信能有三千汉子会放弃小笼包子，挥舞梭镖长矛，和曾国藩开赴那一条近乎死路的战天京之旅。其他的，还有天时，如果没拜上帝教闹太平天国，不是太子党不是世家子不是海归的曾国藩最多能做上一两届国务委员而矣。这点，曾国藩自己也承认，曾氏自撰墓铭也说：“不信书，信运气”。总之，就好象一颗精子，即使你诚心正意好好学习天天向上，在千万颗一起出发的精子中拿到正齐治平所有四门功课的最高分，冲在最前面，如果想要和卵子受精产出不朽的儿子，你还要看造化这次有没有带避孕套，那个重要的卵子有没有在这次按时排放。</p>
-<p>相传，林彪曾经当众讲过一个俄国士兵和中国士兵的笑话。两个士兵一起在边境站岗，俄国士兵问中国士兵，你喝醉过吗？没有，中国士兵回答。你嗑过药吗？没有。你嫖过女人吗？没有。林彪当众借俄国士兵的口最后问道：你这辈子活着有什么意思啊？</p>
+        <p><a href="/2015/04/22/phpunit-01/">上一篇文章</a>介绍了PHPUnit的安装和基本用法，现在来玩玩更高级的。</p>
+<h5 id="依赖关系(depends)">依赖关系(depends)</h5><p>来看看这个例子 UserTest.php：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span><span class="params">(<span class="variable">$name</span>, <span class="variable">$pass</span>)</span></span>&#123; <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'status'</span> =&gt; <span class="string">'succ'</span>, <span class="string">'token'</span> =&gt; <span class="string">'ttt'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">(<span class="variable">$token</span>)</span></span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMyPosts</span><span class="params">(<span class="variable">$token</span>, <span class="variable">$userid</span>)</span></span>&#123; <span class="keyword">return</span> <span class="keyword">array</span>(<span class="number">1</span>); &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testLogin</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$info</span> = login(<span class="string">'name'</span>, <span class="string">'pass'</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="string">'succ'</span>, <span class="variable">$info</span>[<span class="string">'status'</span>]);</span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$info</span>[<span class="string">'token'</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @depends</span> testLogin</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testGetMyId</span><span class="params">(<span class="variable">$token</span>)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$myid</span> = getId(<span class="variable">$token</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$myid</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @depends</span> testLogin</span><br><span class="line">	*<span class="phpdoc"> @depends</span> testGetMyId</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testListMyPosts</span><span class="params">(<span class="variable">$token</span>, <span class="variable">$myid</span>)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$posts</span> = getMyPosts(<span class="variable">$token</span>, <span class="variable">$myid</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="number">1</span>, count(<span class="variable">$posts</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>假设这是一个获取某站文章列表的接口测试，拉取列表需要先登录获取token，然后根据token获取登录用户的id，再拿这个id下的文章，这便产生了依赖关系。<br>声明依赖需要使用 <code>@depends</code> 来标注，可以标注多个。<br>所依赖的方法会依次把返回结果按顺序传入当前方法。<br>测试的运行结果就不多说了，下面看看其他情况。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span><span class="params">(<span class="variable">$name</span>, <span class="variable">$pass</span>)</span></span>&#123; <span class="keyword">return</span> <span class="keyword">array</span>(<span class="string">'status'</span> =&gt; <span class="string">'succ'</span>, <span class="string">'token'</span> =&gt; <span class="string">'ttt'</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getId</span><span class="params">(<span class="variable">$token</span>)</span></span>&#123; <span class="keyword">return</span> <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMyPosts</span><span class="params">(<span class="variable">$token</span>, <span class="variable">$userid</span> = <span class="number">1</span>)</span></span>&#123; <span class="keyword">return</span> <span class="keyword">array</span>(<span class="number">1</span>); &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @depends</span> testLogin</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testGetMyId</span><span class="params">(<span class="variable">$token</span>)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$myid</span> = getId(<span class="variable">$token</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$myid</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @depends</span> testLogin</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testListMyPosts</span><span class="params">(<span class="variable">$token</span>)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$posts</span> = getMyPosts(<span class="variable">$token</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="number">1</span>, count(<span class="variable">$posts</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testLogin</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$info</span> = login(<span class="string">'name'</span>, <span class="string">'pass'</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="string">'succ'</span>, <span class="variable">$info</span>[<span class="string">'status'</span>]);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$info</span>[<span class="string">'token'</span>];</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>再来看看这个例子，把三个测试方法的顺序调换了一下，testLogin挪到了最后，然后在testLogin里加了一行错误的断言，看一下运行结果。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ phpunit UserTest.php</span><br><span class="line">PHPUnit <span class="number">4.5</span><span class="number">.1</span> by Sebastian Bergmann and contributors.</span><br><span class="line"></span><br><span class="line">SSF</span><br><span class="line"><span class="label"></span><br><span class="line">Time:</span> <span class="number">63</span> ms, <span class="string">Memory:</span> <span class="number">3.00</span>Mb</span><br><span class="line"></span><br><span class="line">There was <span class="number">1</span> <span class="string">failure:</span></span><br><span class="line"></span><br><span class="line"><span class="number">1</span>) <span class="string">UserTest:</span>:testLogin</span><br><span class="line">Failed asserting that <span class="number">2</span> matches expected <span class="number">1.</span></span><br><span class="line"></span><br><span class="line"><span class="regexp">/vmdir/</span>web<span class="regexp">/test/</span>UserTest.<span class="string">php:</span><span class="number">31</span></span><br><span class="line"></span><br><span class="line">FAILURES!</span><br><span class="line"><span class="string">Tests:</span> <span class="number">1</span>, <span class="string">Assertions:</span> <span class="number">1</span>, <span class="string">Failures:</span> <span class="number">1</span>, <span class="string">Skipped:</span> <span class="number">2.</span></span><br></pre></td></tr></table></figure></p>
+<p><code>SSF</code> 的 <code>F</code> 之前说过，表示失败，<code>S</code> 则表明skip，跳过。<br>跳过的原因自然就是前两组测试找不到所依赖的testLogin方法，没有办法继续测试，只能跳过。<br>那么为什么会找不到呢，因为PHPUnit是按照编码顺序来运行的，所以依赖关系需要我们自己来控制。testB依赖testA，那么testA就一定要放在testB前边。<br>顺便说一下，如果testA中产生断言错误，testB也会skip。比如第一个例子login失败，那么最终测试结果就会是 <code>FSS</code>。也就是说，testA测试不通过，那就没有必要再去测试testB了。</p>
+<h5 id="数据供给器(dataProvider)">数据供给器(dataProvider)</h5><p>依然看例子：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DataTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @dataProvider</span> additionProvider</span><br><span class="line">	*/</span></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testAdd</span><span class="params">(<span class="variable">$a</span>, <span class="variable">$b</span>, <span class="variable">$c</span>)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertEquals(<span class="variable">$c</span>, <span class="variable">$a</span> + <span class="variable">$b</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">additionProvider</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">array</span>(</span><br><span class="line">			<span class="keyword">array</span>(<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">			<span class="keyword">array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>),</span><br><span class="line">			<span class="keyword">array</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>),</span><br><span class="line">			<span class="keyword">array</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line">		);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这个东西很简单了，一个方法提供几组数据给另一组测试用，而且两个方法没有先后关系。<br>这里要注意一个问题，就是一个方法既有provider又依赖其他方法的时候，provider的数据优先作为传入。<br>比如testB依赖testA，同时需要接受dataC(假设一组有三个数据)所提供的测试数据，那么testB的参数顺序为 <code>testB(dataC1, dataC2, dataC3, testA)</code>。</p>
 
       
     </div>
 
     <div class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/"> #PHP </a>
+          
+            <a href="/tags/PHPUnit/"> #PHPUnit </a>
+          
+            <a href="/tags/测试/"> #测试 </a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/03/24/port-forwarding-for-virtualbox-on-mac/">Mac下设置VirtualBox的80端口转发</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/22/phpunit-01/">PHPUnit学习笔记1：初体验</a>
             
           </div>
         </div>
@@ -198,8 +212,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/02/14/Mr-Niubi/"
-               data-title="[转]愤青曾国藩的自我完善之路" data-url="http://ls-la.me/2015/02/14/Mr-Niubi/">
+          <div class="ds-thread" data-thread-key="2015/04/22/phpunit-02/"
+               data-title="PHPUnit学习笔记2：进阶" data-url="http://ls-la.me/2015/04/22/phpunit-02/">
           </div>
         
       </div>
@@ -294,7 +308,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#依赖关系(depends)"><span class="nav-number">1.</span> <span class="nav-text">依赖关系(depends)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据供给器(dataProvider)"><span class="nav-number">2.</span> <span class="nav-text">数据供给器(dataProvider)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
