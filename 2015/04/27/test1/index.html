@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="AAA,BbB," />
 
 
 
@@ -33,7 +33,7 @@
 
 
 
-  <title> PHPUnit学习笔记3：持续集成 (CI) // 架构人生 </title>
+  <title> test1 // 架构人生 </title>
 </head>
 
 <body>
@@ -120,7 +120,7 @@
           
           
             
-              PHPUnit学习笔记3：持续集成 (CI)
+              test1
             
           
         </h1>
@@ -128,7 +128,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-04-23
+          发表于 2015-04-27
         </span>
 
         
@@ -137,8 +137,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/04/23/phpunit-03/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/23/phpunit-03/"></span>
+            <a href="/2015/04/27/test1/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/27/test1/"></span>
             </a>
           </span>
           
@@ -152,43 +152,30 @@
       
 
       
-        <h3 id="组织测试">组织测试</h3><p>前边两节学习了PHPUnit的基本写法。<br>我们在开发的过程中，不可能把所有代码都写到一个文件中，所以有必要来看一下怎么组织源码和测试代码的文件结构。<br>假设我们写了一个小汽车相关的库文件，文件路径 <code>/vmdir/web/test/ci/src/Car.php</code> ，然后写了对应的测试文件 <code>/vmdir/web/test/ci/tests/Car.php</code>，现在需要进行单元测试，怎么把Car引入测试文件呢？先来看看require行不行：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(<span class="variable">$name</span> = null)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(!<span class="variable">$name</span>)</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> InvalidArgumentException(<span class="string">'给车取个名字呀~'</span>);</span><br><span class="line"></span><br><span class="line">		<span class="variable">$this</span>-&gt;name = <span class="variable">$name</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">require</span> <span class="string">'ci/src/Car.php'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarTest</span> <span class="keyword">extends</span> <span class="title">PHPUnit_Framework_TestCase</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	*<span class="phpdoc"> @expectedException</span> InvalidArgumentException</span><br><span class="line">	*/</span> </span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testException</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$car</span> = <span class="keyword">new</span> Car();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">testNewCar</span><span class="params">()</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		<span class="variable">$car</span> = <span class="keyword">new</span> Car(<span class="string">'kaka'</span>);</span><br><span class="line">		<span class="variable">$this</span>-&gt;assertInstanceOf(<span class="string">'Car'</span>, <span class="variable">$car</span>);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> <span class="variable">$car</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>运行发现没问题(节省篇幅，我就不贴运行结果了)。<br>但是这样写的话，当测试的文件多了，然后突然要改src的路径，那就得去一个个文件地改require部分，这不科学。所以我们换一种方式，把require去掉，想办法让phpunit先加载源码文件，再去运行测试代码。于是找到phpunit的一个参数叫 <code>--bootstrap</code>：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ phpunit --<span class="keyword">bootstrap</span> <span class="keyword">ci</span>/src/Car.php <span class="keyword">ci</span>/tests/CarTest.php</span><br></pre></td></tr></table></figure></p>
-<p>或者写成<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ phpunit --<span class="keyword">bootstrap</span> <span class="keyword">ci</span>/src/Car.php <span class="keyword">ci</span>/tests/</span><br></pre></td></tr></table></figure></p>
-<p>phpunit会在测试目录下运行所有的*Test.php文件，所以可以在tests目录下写很多的测试文件，只要保证文件名符合格式，就不用写很长的命令行来进行测试了。<br>那如果有很多的源码文件呢，写了10个交通工具的库文件，是不是就得这样写呢：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ phpunit --bootstrap ci/src/Car<span class="class">.php</span> ci/src/Bike<span class="class">.php</span> ci/src/Plain<span class="class">.php</span> ci/src/Train<span class="class">.php</span> ci/tests/</span><br></pre></td></tr></table></figure></p>
-<p>非也，可以取巧一点，我们用一个文件来动态加载这些类，然后命令行里只加载这一个文件就行。<br>新增一个文件，<code>/vmdir/web/test/ci/src/autoload.php</code>：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span><br><span class="line"></span><br><span class="line">spl_autoload_register(<span class="function"><span class="keyword">function</span><span class="params">(<span class="variable">$class</span>)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="variable">$class_file</span> = <span class="keyword">__DIR__</span> . <span class="string">'/'</span> . ucfirst(<span class="variable">$class</span>) . <span class="string">'.php'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span>(file_exists(<span class="variable">$class_file</span>))</span><br><span class="line">		<span class="keyword">require</span> <span class="variable">$class_file</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>然后这样运行：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phpunit --<span class="keyword">bootstrap</span> <span class="keyword">ci</span>/src/autoload.php <span class="keyword">ci</span>/tests/</span><br></pre></td></tr></table></figure></p>
-<p>好了，就是这么简单粗暴！</p>
-<h3 id="使用XML文件来配置测试">使用XML文件来配置测试</h3><p>年轻人沉不住气，尝到了使用参数的甜头，肯定就会去文档里搜刮一堆参数过来啦，然后这个命令行又会变得跟编译参数一样又臭又长。所以我们来换一种写法，把着所有的一切，都交给xml去配置。<br>新建一个文件， <code>/vmdir/web/test/phpunit.xml</code>：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">phpunit</span> <span class="attribute">bootstrap</span>=<span class="value">"ci/src/autoload.php"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">testsuites</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">testsuite</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="title">directory</span> <span class="attribute">suffix</span>=<span class="value">"Test.php"</span>&gt;</span>ci/tests<span class="tag">&lt;/<span class="title">directory</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="title">testsuite</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">testsuites</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">phpunit</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>然后运行测试的时候就一句话：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>phpunit</span><br></pre></td></tr></table></figure></p>
-<p>世界就是这么美好。<br>phpunit会在当前目录下寻找 <code>phpunit.xml</code>文件，如果找到的话就按照文件里的配置去进行测试。或者使用参数去指定配置文件的位置：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ phpunit <span class="comment">--configuration otherpath/phpunit.xml</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="持续集成">持续集成</h3><p>好了，我们来进一步解放双手。</p>
-<blockquote>
-<p>持续集成(Continuous Integration)是软件开发过程中的重要环节，不论是在开发环境，还是生产环境，其好处都是可以让团队尽快得到反馈，从而尽早发现和解决问题，不要等到用户来报告问题，影响产品和团队的声誉。越早越快地发现和解决问题，成本越低，这也是敏捷开发的基本目的之一。</p>
-</blockquote>
-<p>我们用travis这个工具来感受一下持续集成。<br>先把项目提交到github上边去：<a href="https://github.com/ifkccp/test" target="_blank" rel="external">test on github</a>，然后进入网站<a href="">https://travis-ci.org/</a>，不用注册，使用github账号登陆就行。<br>然后进入自己的<a href="https://travis-ci.org/profile" target="_blank" rel="external">profile页面</a>，这个页面列出了你在github上的项目，找到测试的项目，把那个叉叉点成勾。<br><img src="http://ww4.sinaimg.cn/large/00651KUrgw1ergpmmsbxnj306i019mx5.jpg" alt=""><br>接下来在项目根目录新增文件 <code>/vmdir/web/test/.travis.yml</code>：<br><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">language</span>: <span class="string">php</span></span><br><span class="line"></span><br><span class="line"><span class="haml">php:</span><br><span class="line">  -<span class="ruby"> <span class="number">5.3</span></span><br><span class="line"></span>  -<span class="ruby"> <span class="number">5.4</span></span><br><span class="line"></span></span><br><span class="line">script: phpunit -v</span></span><br></pre></td></tr></table></figure></p>
-<p>然后本地提交后，travis-ci被github的githook钩子触发，自动进入测试，测试完成后会给你的邮箱发送邮件：<br><img src="http://ww4.sinaimg.cn/large/00651KUrjw1ergr282kdoj30rk0m2jv4.jpg" alt=""><br>这里提一句，travis的测试数据库默认用户名是root，密码为空。<br>可以把这样的状态图标放在自己项目的readme里，提升逼格。<img src="https://travis-ci.org/ifkccp/test.png?branch=master" alt=""></p>
-<p>这样一来，就可以专注进行项目开发，然后编写对应的测试代码，具体的测试就交给travis吧，每次提交就会自动测试，喝杯咖啡坐等邮件就行了。</p>
-<p>附：<br><a href="http://docs.travis-ci.com/user/languages/php/" target="_blank" rel="external">更多关于travis的文档</a></p>
-
+        
       
     </div>
 
     <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AAA/"> #AAA </a>
+          
+            <a href="/tags/BbB/"> #BbB </a>
+          
+        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/04/27/test1/">test1</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/04/22/phpunit-02/">PHPUnit学习笔记2：进阶</a>
+              <a href="/2015/04/23/phpunit-03/">PHPUnit学习笔记3：持续集成 (CI)</a>
             
           </div>
         </div>
@@ -204,8 +191,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2015/04/23/phpunit-03/"
-               data-title="PHPUnit学习笔记3：持续集成 (CI)" data-url="http://ls-la.me/2015/04/23/phpunit-03/">
+          <div class="ds-thread" data-thread-key="2015/04/27/test1/"
+               data-title="test1" data-url="http://ls-la.me/2015/04/27/test1/">
           </div>
         
       </div>
@@ -300,7 +287,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织测试"><span class="nav-number">1.</span> <span class="nav-text">组织测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用XML文件来配置测试"><span class="nav-number">2.</span> <span class="nav-text">使用XML文件来配置测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持续集成"><span class="nav-number">3.</span> <span class="nav-text">持续集成</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
