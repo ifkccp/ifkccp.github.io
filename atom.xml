@@ -4,7 +4,7 @@
   <subtitle><![CDATA[成长之路]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://ls-la.me/"/>
-  <updated>2015-04-27T02:51:28.000Z</updated>
+  <updated>2015-04-24T09:08:19.000Z</updated>
   <id>http://ls-la.me/</id>
   
   <author>
@@ -13,23 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[test1]]></title>
-    <link href="http://ls-la.me/2015/04/27/test1/"/>
-    <id>http://ls-la.me/2015/04/27/test1/</id>
-    <published>2015-04-27T02:51:09.000Z</published>
-    <updated>2015-04-27T02:51:28.000Z</updated>
-    <content type="html"></content>
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="AAA" scheme="http://ls-la.me/tags/AAA/"/>
-    
-      <category term="BbB" scheme="http://ls-la.me/tags/BbB/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[PHPUnit学习笔记3：持续集成 (CI)]]></title>

@@ -122,79 +122,6 @@
           
           
             
-              <a class="post-title-link" href="/2015/04/27/test1/">
-                test1
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-04-27
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/04/27/test1/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2015/04/27/test1/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/AAA/"> #AAA </a>
-          
-            <a href="/tags/BbB/"> #BbB </a>
-          
-        </div>
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
               <a class="post-title-link" href="/2015/04/23/phpunit-03/">
                 PHPUnit学习笔记3：持续集成 (CI)
               </a>
@@ -561,6 +488,101 @@
 
 
     
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/24/port-forwarding-for-virtualbox-on-mac/">
+                Mac下设置VirtualBox的80端口转发
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-03-24
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Mac/">Mac</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/03/24/port-forwarding-for-virtualbox-on-mac/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/24/port-forwarding-for-virtualbox-on-mac/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>Mac 抹盘装完 Yosemite 之后所有的开发环境全部都需要重新搭建，索性弄个虚拟机然后环境全部扔进去得了。反正机器本身没啥好备份的，以后再装系统就只备份虚拟机就行。</p>
+<p>由于本身不是root用户，虚拟机的开不了80端口，需要在主机上做点配置 (VirtualBox已经把虚拟机的80端口转发到了Mac的8080端口)：</p>
+<p><img src="http://ww3.sinaimg.cn/mw690/00651KUrgw1eqgud42grsj30gf02owf3.jpg" alt="VirtualBox"></p>
+<p>开始：<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ sudo -i</span><br><span class="line"><span class="preprocessor"># echo "rdr pass on lo0 inet proto tcp from any to any port 80 -&gt; 127.0.0.1 port 8080" &gt; /etc/pf.anchors/vbox</span></span><br><span class="line"><span class="preprocessor"># vi /etc/pf.conf</span></span><br></pre></td></tr></table></figure></p>
+<p>在文件尾添加下边两行:</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rdr-anchor <span class="string">"vbox"</span></span><br><span class="line"><span class="built_in">load</span> <span class="built_in">anchor</span> <span class="string">"vbox"</span> <span class="keyword">from</span> <span class="string">"/etc/pf.anchors/vbox"</span></span><br></pre></td></tr></table></figure>
+<p>使配置生效：<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># pfctl -ef /etc/pf.conf</span></span><br></pre></td></tr></table></figure></p>
+<p>现在即可打开浏览器，不用加端口访问虚拟机里的web项目了。</p>
+<p>添加开机启动需要编辑文件 <code>/System/Library/LaunchDaemons/com.apple.pfctl.plist</code>，添加第二行 (-e这一行)：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">string</span>&gt;pfctl&lt;/<span class="built_in">string</span>&gt;</span><br><span class="line">&lt;<span class="built_in">string</span>&gt;-<span class="keyword">e</span>&lt;/<span class="built_in">string</span>&gt;</span><br><span class="line">&lt;<span class="built_in">string</span>&gt;-<span class="keyword">f</span>&lt;/<span class="built_in">string</span>&gt;</span><br><span class="line">&lt;<span class="built_in">string</span>&gt;/etc/pf.<span class="keyword">conf</span>&lt;/<span class="built_in">string</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="http://rabbit52.com/2014/desktopos/mac/yosemite-port-forwarding-at-startup" target="_blank" rel="external">Yosemite 开机启动设置端口转发</a></p>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/"> #Mac </a>
+          
+            <a href="/tags/VirtualBox/"> #VirtualBox </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
   </div>
 
   
@@ -596,7 +618,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
